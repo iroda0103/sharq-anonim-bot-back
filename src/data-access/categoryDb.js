@@ -20,9 +20,6 @@ async function findAll({ filters, q, page, sort }) {
 
   if (q) {
     filter.$or = [
-      { first_name: { $regex: `.*${q}.*`, $options: "i" } },
-      { last_name: { $regex: `.*${q}.*`, $options: "i" } },
-      { username: { $regex: `.*${q}.*`, $options: "i" } }
     ];
   }
 

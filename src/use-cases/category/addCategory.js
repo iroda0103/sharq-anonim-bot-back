@@ -4,9 +4,8 @@ const { BadRequestError } = require("../../shared/errors");
 /**
  * @param {object} deps
  * @param {import('../../src/data-access/categoryDb')} deps.categoryDb
- * @param {import('../../adapters/Upload')} deps.Upload
  */
-module.exports = function makeAddCategory({ categoryDb, Upload }) {
+module.exports = function makeAddCategory({ categoryDb }) {
   return async function addCategory(data) {
     try {
       const category = makeCategory({
@@ -19,7 +18,7 @@ module.exports = function makeAddCategory({ categoryDb, Upload }) {
 
       if (categoryInfo) {
         throw new BadRequestError(
-          "Bunday nomli telefon raqami mavjud boshqa raqam tanlang"
+          "Bunday nomli key  mavjud boshqa tanlang"
         );
       }
 

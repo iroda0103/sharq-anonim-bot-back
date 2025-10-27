@@ -4,9 +4,8 @@ const { BadRequestError } = require("../../shared/errors");
 /**
  * @param {object} deps
  * @param {import('../../data-access/feedbackDb')} deps.feedbackDb
- * @param {import('../../adapters/Upload')} deps.Upload
  */
-module.exports = function makeAddFeedback({ feedbackDb, Upload }) {
+module.exports = function makeAddFeedback({ feedbackDb }) {
   return async function addFeedback(data) {
     try {
       const feedback = makeFeedback({
