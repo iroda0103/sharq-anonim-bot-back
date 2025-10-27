@@ -20,7 +20,7 @@ module.exports = function makeGetCategorys({ listCategory }) {
 
       return {
         headers: {
-          "Content-Type": "Category/json"
+          "Content-Type": "application/json"
         },
         statusCode: 200,
         body: { ...result }
@@ -30,7 +30,7 @@ module.exports = function makeGetCategorys({ listCategory }) {
 
       return {
         headers: {
-          "Content-Type": "Feedback/json"
+          "Content-Type": "application/json"
         },
         statusCode: mapErrorToStatus(e),
         body: { message: e.message }

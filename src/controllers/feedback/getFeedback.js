@@ -20,7 +20,7 @@ module.exports = function makeGetFeedback({ showFeedback }) {
 
       return {
         headers: {
-          "Content-Type": "Feedback/json"
+          "Content-Type": "application/json"
         },
         statusCode: 200,
         body: { ...result }
@@ -30,7 +30,7 @@ module.exports = function makeGetFeedback({ showFeedback }) {
 
       return {
         headers: {
-          "Content-Type": "Feedback/json"
+          "Content-Type": "application/json"
         },
         statusCode: mapErrorToStatus(e),
         body: { message: e.message }

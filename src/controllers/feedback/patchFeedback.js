@@ -20,7 +20,7 @@ module.exports = function makePatchFeedback({ editFeedback }) {
 
       return {
         headers: {
-          "Content-Type": "Feedback/json"
+          "Content-Type": "application/json"
         },
         statusCode: 201,
         body: { data }

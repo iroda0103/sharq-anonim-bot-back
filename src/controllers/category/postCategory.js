@@ -20,7 +20,7 @@ module.exports = function makePostCategory({ addCategory }) {
 
       return {
         headers: {
-          "Content-Type": "Category/json"
+          "Content-Type": "application/json"
         },
         statusCode: 201,
         body: { data }
@@ -30,7 +30,7 @@ module.exports = function makePostCategory({ addCategory }) {
 
       return {
         headers: {
-          "Content-Type": "Feedback/json"
+          "Content-Type": "application/json"
         },
         statusCode: mapErrorToStatus(e),
         body: {
