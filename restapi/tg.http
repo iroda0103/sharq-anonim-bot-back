@@ -1,0 +1,56 @@
+POST http://localhost:3001/api/category
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMDhlYjViNjZiMGE1MDFhZmMxYjkxIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDUzNTc1NCwiZXhwIjoxNjk0OTc4NTU0fQ.4q9yjBlaV3RyejfJhazyUzhnjbKH9_NwWq-8UsvgUzw
+Content-Type: application/json
+
+{   
+    "key":  "darslar",
+    "name": "Darslar",
+    "icon": "📚",
+    "description": "O'quv jarayoni haqida"
+}
+
+###
+GET http://localhost:3001/api/category
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMTA4YzE1MWRiZmM1ZWViMjliNWE4Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NTM3NTIyNywiZXhwIjoxNjk1Mzc4ODI3fQ.APmXZeBtUhOtWQHbLy5XKXlZTrPfYf_71YR4Xfp0udA
+###
+GET http://localhost:3000/api/categories
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMTA4YzE1MWRiZmM1ZWViMjliNWE4Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NTM3NTIyNywiZXhwIjoxNjk1Mzc4ODI3fQ.APmXZeBtUhOtWQHbLy5XKXlZTrPfYf_71YR4Xfp0udA
+
+###
+GET http://localhost:3000/api/users/65009310bce7f2521e2cfc0d
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMDhlYjViNjZiMGE1MDFhZmMxYjkxIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDUzNTc1NCwiZXhwIjoxNjk0OTc4NTU0fQ.4q9yjBlaV3RyejfJhazyUzhnjbKH9_NwWq-8UsvgUzw
+###
+DELETE http://localhost:3000/api/users/64f871e6f3fd6493b2acab99
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMDhlYjViNjZiMGE1MDFhZmMxYjkxIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDUzNTc1NCwiZXhwIjoxNjk0OTc4NTU0fQ.4q9yjBlaV3RyejfJhazyUzhnjbKH9_NwWq-8UsvgUzw
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+     "username":"admin",
+    "password":"1234"
+}
+
+###
+GET http://localhost:3000/api/users/me
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwZDZlNjAxMzEwYjYzYTZjZDViZDdiIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NTM3OTQzNSwiZXhwIjoxNjk1MzgzMDM1fQ.I71hdKFMFEz7k-fZs5SSEGyJt75p0Q05XAfYVixpVxI
+
+
+###
+PATCH http://localhost:3000/api/users/65009310bce7f2521e2cfc0d
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMDhlYjViNjZiMGE1MDFhZmMxYjkxIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDUzNTc1NCwiZXhwIjoxNjk0OTc4NTU0fQ.4q9yjBlaV3RyejfJhazyUzhnjbKH9_NwWq-8UsvgUzw
+Content-Type: application/json
+
+{
+    "first_name":"SMit"
+}
+
+###
+PATCH http://localhost:3000/api/users/me
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMDkzMTBiY2U3ZjI1MjFlMmNmYzBjIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDUzNzU1MiwiZXhwIjoxNjk0OTgwMzUyfQ.yZ84KOHeuwvhV5HUsqOpSmGWnpSt8nAln8a37iEdj_o
+Content-Type: application/json
+
+{
+    "first_name":"admin002"
+}
