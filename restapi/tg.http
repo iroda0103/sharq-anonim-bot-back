@@ -1,12 +1,12 @@
-POST http://localhost:3001/api/category
+POST https://bot.sharq-dev.uz/api/category
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMDhlYjViNjZiMGE1MDFhZmMxYjkxIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDUzNTc1NCwiZXhwIjoxNjk0OTc4NTU0fQ.4q9yjBlaV3RyejfJhazyUzhnjbKH9_NwWq-8UsvgUzw
 Content-Type: application/json
 
 {   
-    "key":  "darslar",
-    "name": "Darslar",
-    "icon": "📚",
-    "description": "O'quv jarayoni haqida"
+    "key": "boshqa",
+    "name": "Boshqa",
+    "icon": "💬",
+    "description": "Qolgan barcha fikrlar"
 }
 
 ###

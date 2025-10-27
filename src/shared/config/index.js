@@ -16,7 +16,8 @@ module.exports = {
   jwt: {
     secret: process.env.JWT_SECRET
   },
-  tg:{
-    token: process.env.TELEGRAM_BOT_TOKEN
+  tg: {
+    botToken: process.env.TELEGRAM_BOT_TOKEN,
+    chatId: process.env.TELEGRAM_CHAT_ID
   }
 };
