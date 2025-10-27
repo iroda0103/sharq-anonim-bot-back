@@ -15,5 +15,11 @@ const schema = new mongoose.Schema(
   }
 );
 
+schema.virtual('user', {
+  ref: 'User',
+  localField: 'user_id', 
+  foreignField: 'telegram_id', 
+  justOne: true
+});
 
 module.exports = mongoose.model("Feedback", schema);
