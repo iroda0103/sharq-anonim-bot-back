@@ -196,7 +196,7 @@ const API_URL = 'https://bot.sharq-dev.uz/api';
 const getMainKeyboard = (userId) => {
   return Markup.keyboard([
     [Markup.button.webApp('✍️ Fikr Bildirish', `${WEB_APP_URL}?user=${userId}`)],
-    ['📞 Yordam', 'ℹ️ Biz haqimizda']
+    // ['📞 Yordam', 'ℹ️ Biz haqimizda']
   ]).resize();
 };
 
@@ -231,32 +231,26 @@ bot.start(async (ctx) => {
     }
 
     const welcomeMessage = `
-🌟 *Assalomu alaykum, ${user.first_name}!*
-
-🎓 *Universitet Anonim Feedback Botiga Xush Kelibsiz!*
+🌟 *Assalomu alaykum, ${user.first_name}!Sharq Universitet Anonim Feedback Botiga Xush Kelibsiz!*
 
 💫 *Sizning har bir fikringiz - bu universitetimizni yanada yaxshilash imkoniyati!* 
-📈 Har bir taklif, har bir mulohaza bizning oliy ta'lim muassasamizni takomillashtirishga yordam beradi.
-
-✨ *Biz bilan sizning ovozingiz eshitiladi!*
-🔮 Anonim tarzda o'z fikringizni bildiring va o'zgartirishlarning bir qismiga aylaning.
-
-📋 *Mavjud kategoriyalar:*
-• 💡 Takliflar - Yangi g'oyalar va takliflar
-• ⚠️ Shikoyatlar - Muammolar va kamchiliklar  
-• 📚 Dars jarayoni - Ta'lim sifatiga oid fikrlar
-• 🏢 Infratuzilma - Binolar, jihozlar, shart-sharoitlar
-• 💬 Boshqa fikrlar - Qolgan barcha mavzular
-
-🔒 *100% Maxfiylik kafolati:*
-• Shaxsiy ma'lumotlaringiz hech qachon saqlanmaydi
-• Barcha fikrlar anonim tarzda qayd etiladi
-• Faqatgina fikr matni va kategoriyasi ko'rsatiladi
+🔒 Maxfiylik kafolati:
+Shaxsiy ma’lumotlaringiz saqlanmaydi — faqat fikringiz yozib olinadi.
 
 🎯 *Boshlash uchun "✍️ Fikr Bildirish" tugmasini bosing va o'z hissangizni qo'shing!*
     `.trim();
+    await ctx.replyWithMarkdown(welcomeMessage, {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            Markup.button.webApp('✍️ Fikr Bildirish', `${WEB_APP_URL}/form?user=${user.id}`)
+          ]
+        ]
+      }
+    });
 
-    await ctx.replyWithMarkdown(welcomeMessage, getMainKeyboard(user.id));
+
+    // await ctx.replyWithMarkdown(welcomeMessage, getMainKeyboard(user.id));
   } catch (error) {
     console.error('Start command error:', error);
     await ctx.reply('❌ Kechirasiz, texnik xatolik yuz berdi. Iltimos, birozdan so\'ng qayta urinib ko\'ring yoki /start buyrug\'ini yuboring.');
@@ -290,7 +284,7 @@ bot.hears('📞 Yordam', async (ctx) => {
 *📢 Eslatma:* Sizning har bir murojaatingiz universitetimizni yanada yaxshilashga sabab bo'ladi!
     `.trim();
 
-    await ctx.replyWithMarkdown(helpMessage);
+    // await ctx.replyWithMarkdown(helpMessage);
   } catch (error) {
     console.error('Yordam error:', error);
   }
@@ -320,7 +314,7 @@ bot.hears('ℹ️ Biz haqimizda', async (ctx) => {
 *🎉 Sizning har bir taklifingiz bizga yangi imkoniyatlar ochib beradi!*
     `.trim();
 
-    await ctx.replyWithMarkdown(aboutMessage);
+    // await ctx.replyWithMarkdown(aboutMessage);
   } catch (error) {
     console.error('Biz haqimizda error:', error);
   }
@@ -404,7 +398,7 @@ bot.on('callback_query', async (ctx) => {
 
 💡 *Eslatma:* Sizning har bir murojaatingiz universitetimizni yanada yaxshilashga sabab bo'ladi!
       `.trim();
-      
+
       await ctx.editMessageText(helpMessage, {
         parse_mode: 'Markdown',
         ...Markup.inlineKeyboard([
@@ -426,7 +420,7 @@ bot.on('callback_query', async (ctx) => {
 
 🤝 *Keling, birgalikda universitetimizni yanada yaxshiroq qilaylik!*
       `.trim();
-      
+
       await ctx.editMessageText(aboutMessage, {
         parse_mode: 'Markdown',
         ...Markup.inlineKeyboard([

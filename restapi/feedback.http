@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3001/api/feedback
+GET http://localhost:3001/api/feedback?page[limit]=100&page[offset]=0
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUwMTA4YzE1MWRiZmM1ZWViMjliNWE4Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NTM3NTIyNywiZXhwIjoxNjk1Mzc4ODI3fQ.APmXZeBtUhOtWQHbLy5XKXlZTrPfYf_71YR4Xfp0udA
 
 ###

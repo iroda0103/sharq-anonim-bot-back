@@ -6,7 +6,7 @@ module.exports = function makeListFeedbacks({ feedbackDb }) {
   return async function listFeedbacks({
     filters = {},
     q,
-    page = { limit: 10, offset: 0 },
+    page = { limit: 200, offset: 0 },
     sort = { by: "id", order: "desc" }
   }) {
     // Agar filters.status = "all" bo'lsa, uni olib tashlaymiz
