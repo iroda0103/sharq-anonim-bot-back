@@ -7,16 +7,16 @@ module.exports = function makeGetCategorys({ listCategory }) {
   return async function getCategorys(httpRequest) {
     try {
       const validator = httpValidator(
-        { query: httpRequest.query },
+        { params: httpRequest.params },
         getCategorysSchema
       );
-      const { error, query } = await validator.validate();
+      const { error, params } = await validator.validate();
 
       if (error) {
         throw new InvalidPropertyError(error);
       }
 
-      const result = await listCategory({ ...query });
+      const result = await listCategory({ ...params });
 
       return {
         headers: {

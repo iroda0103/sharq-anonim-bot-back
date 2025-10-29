@@ -5,7 +5,7 @@ const {
 } = require("../../../shared/schemas");
 
 exports.getFeedbacksSchema = {
-  query: Joi.object({
+  params: Joi.object({
     q: Joi.string().allow(""),
     filters: { status: Joi.string().valid("created", "pending", "rejected","successfull") },
     page: offsetPaginationSchema,

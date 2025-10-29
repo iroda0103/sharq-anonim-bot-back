@@ -7,16 +7,17 @@ module.exports = function makeGetUsers({ listUser }) {
   return async function getUsers(httpRequest) {
     try {
       const validator = httpValidator(
-        { query: httpRequest.query },
+        { params: httpRequest.params },
         getUsersSchema
       );
-      const { error, query } = await validator.validate();
+      console.log("Validation successful", httpRequest.params);
+      const { error, params } = await validator.validate();
 
       if (error) {
         throw new InvalidPropertyError(error);
       }
 
-      const result = await listUser({ ...query });
+      const result = await listUser({ ...params });
 
       return {
         headers: {

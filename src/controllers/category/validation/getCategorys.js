@@ -5,7 +5,7 @@ const {
 } = require("../../../shared/schemas");
 
 exports.getCategorysSchema = {
-  query: Joi.object({
+  params: Joi.object({
     q: Joi.string().allow(""),
     filters: { key: Joi.string().trim() },
     page: offsetPaginationSchema,

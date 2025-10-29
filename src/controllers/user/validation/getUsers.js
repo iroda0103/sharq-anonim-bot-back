@@ -5,7 +5,7 @@ const {
 } = require("../../../shared/schemas");
 
 exports.getUsersSchema = {
-  query: Joi.object({
+  params: Joi.object({
     q: Joi.string().allow(""),
     filters: { role: Joi.string().valid("all", "admin", "employee") },
     page: offsetPaginationSchema,
